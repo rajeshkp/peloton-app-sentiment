@@ -1,0 +1,24 @@
+<% if $mode == "raw" %>
+
+select 
+    sq.key as sentiment,
+    sq.value as raw
+from (MAP 
+        * 
+      using 'python ./sentiment_mapper.py'
+      from (<%= $hql %>) ana
+) sq 
+
+<% else %>
+
+select 
+    sq.key,
+    count(1)
+from (MAP 
+         *
+      using 'python ./sentiment_mapper.py'
+      from (<%= $hql %>) ana
+) sq 
+group by sq.key
+
+<% end %>
