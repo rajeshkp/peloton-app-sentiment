@@ -2,7 +2,7 @@
 import sys
 
 negative = [ "bad", "worse", "worst", "suck", "not", "hate" ]
-positive = [ "good", "best", "cool", "fantasitc", "great", "like" , "awesome" ]
+positive = [ "good", "best", "cool", "fantastic", "great", "like" , "awesome" ]
 
 
 for mline in sys.stdin:
